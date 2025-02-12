@@ -20,7 +20,7 @@ export default function Register({ navigation }) {
 
       if (response.ok) {
         Alert.alert('Success', 'User registered successfully!');
-        navigation.navigate('Login'); // Redirect to Login page after successful registration
+        navigation.navigate('Login');
       } else {
         const errorData = await response.json();
         Alert.alert('Registration failed', errorData.error || 'An error occurred.');
@@ -75,7 +75,7 @@ const styles = StyleSheet.create({
   container: { flex: 1, justifyContent: 'center', alignItems: 'center', paddingHorizontal: 30 },
   title: { fontSize: 30, color: '#fff', marginBottom: 20 },
   input: { borderBottomWidth: 1, borderBottomColor: '#fff', padding: 10, marginVertical: 15, width: '100%', color: '#fff' },
-  submitButton: { paddingVertical: 15, borderRadius: 5, alignItems: 'center', backgroundColor: '#7a2c34', marginTop: 20 },
-  submitButtonText: { color: '#fff', fontSize: 18, fontWeight: 'bold' },
+  submitButton: { paddingVertical: 15, borderRadius: 5, alignItems: 'center', justifyContent: 'center', backgroundColor: '#7a2c34', marginTop: 20, width: '100%' },
+  submitButtonText: { color: '#fff', fontSize: 18, fontWeight: 'bold', textAlign: 'center' },
   linkText: { marginTop: 15, color: '#fff', textDecorationLine: 'underline' },
 });

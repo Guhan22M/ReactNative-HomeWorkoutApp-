@@ -1,15 +1,14 @@
 from rest_framework import serializers
-from .models import UserProfile
-from django.contrib.auth.models import User
+from .models import CustomUser, UserProfile  # Import CustomUser instead of default User
 
 class RegisterSerializer(serializers.ModelSerializer):
     class Meta:
-        model = User
+        model = CustomUser  # Use CustomUser model
         fields = ('username', 'email', 'password')
         extra_kwargs = {'password': {'write_only': True}}
 
     def create(self, validated_data):
-        user = User.objects.create_user(**validated_data)
+        user = CustomUser.objects.create_user(**validated_data)  # Use CustomUser's manager
         return user
 
 class LoginSerializer(serializers.Serializer):

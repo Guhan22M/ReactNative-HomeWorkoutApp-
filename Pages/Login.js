@@ -22,7 +22,7 @@ export default function Login({ navigation }) {
         const data = await response.json();
         await AsyncStorage.setItem('access', data.access);
         Alert.alert('Success', 'Logged in successfully!');
-        navigation.navigate('BMIInput'); // Navigate to BMI input page after login
+        navigation.navigate('BMIInput');
       } else {
         Alert.alert('Login failed', 'Invalid username or password');
       }
@@ -53,7 +53,7 @@ export default function Login({ navigation }) {
           onChangeText={setPassword}
         />
         <TouchableOpacity onPress={handleLogin} style={styles.submitButton}>
-          <Text style={styles.submitButtonText}>Submit</Text>
+          <Text style={styles.submitButtonText}>Login</Text>
         </TouchableOpacity>
         <TouchableOpacity onPress={() => navigation.navigate('Register')}>
           <Text style={styles.linkText}>Register</Text>
@@ -68,7 +68,7 @@ const styles = StyleSheet.create({
   container: { flex: 1, justifyContent: 'center', alignItems: 'center', paddingHorizontal: 30 },
   title: { fontSize: 30, color: '#fff', marginBottom: 20 },
   input: { borderBottomWidth: 1, borderBottomColor: '#fff', padding: 10, marginVertical: 15, width: '100%', color: '#fff' },
-  submitButton: { paddingVertical: 15, borderRadius: 5, alignItems: 'center', backgroundColor: '#7a2c34', marginTop: 20 },
-  submitButtonText: { color: '#fff', fontSize: 18, fontWeight: 'bold' },
+  submitButton: { paddingVertical: 15, borderRadius: 5, alignItems: 'center', justifyContent: 'center', backgroundColor: '#7a2c34', marginTop: 20, width: '100%' },
+  submitButtonText: { color: '#fff', fontSize: 18, fontWeight: 'bold', textAlign: 'center' },
   linkText: { marginTop: 15, color: '#fff', textDecorationLine: 'underline' },
 });

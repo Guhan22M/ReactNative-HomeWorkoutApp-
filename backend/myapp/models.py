@@ -26,7 +26,7 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
 
     groups = models.ManyToManyField(
         'auth.Group',
-        related_name='customuser_set',  # Avoids conflict with auth.User groups
+        related_name='customuser_set',
         blank=True,
         help_text="The groups this user belongs to.",
         verbose_name="groups",
@@ -34,7 +34,7 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
 
     user_permissions = models.ManyToManyField(
         'auth.Permission',
-        related_name='customuser_permissions_set',  # Avoids conflict with auth.User permissions
+        related_name='customuser_permissions_set',
         blank=True,
         help_text="Specific permissions for this user.",
         verbose_name="user permissions",
@@ -59,4 +59,3 @@ class UserProfile(models.Model):
             height_in_m = self.height / 100
             self.bmi = self.weight / (height_in_m ** 2)
             self.save()
-

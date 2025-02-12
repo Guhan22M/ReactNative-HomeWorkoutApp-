@@ -132,6 +132,7 @@ REST_FRAMEWORK = {
     ),
 }
 
+
 AUTH_USER_MODEL = 'myapp.CustomUser'
 
 # ALLOWED_HOSTS = ['192.168.1.10']

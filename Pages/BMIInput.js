@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { StyleSheet, Text, TextInput, View, TouchableOpacity, Alert } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
-import { updateUserProfile } from './api'; // Make sure the path to api.js is correct
+import { updateUserProfile } from './api';
 
 export default function BMIInput({ navigation }) {
   const [height, setHeight] = useState('');
@@ -49,8 +49,9 @@ export default function BMIInput({ navigation }) {
 const styles = StyleSheet.create({
   gradient: { flex: 1 },
   container: { flex: 1, justifyContent: 'center', alignItems: 'center', paddingHorizontal: 30 },
-  title: { fontSize: 24, color: '#fff', marginBottom: 20, textAlign: 'center' },
+  title: { fontSize: 30, color: '#fff', marginBottom: 20 },
   input: { borderBottomWidth: 1, borderBottomColor: '#fff', padding: 10, marginVertical: 15, width: '100%', color: '#fff' },
-  submitButton: { paddingVertical: 15, borderRadius: 5, alignItems: 'center', backgroundColor: '#7a2c34', marginTop: 20 },
-  submitButtonText: { color: '#fff', fontSize: 18, fontWeight: 'bold' },
+  submitButton: { paddingVertical: 15, borderRadius: 5, alignItems: 'center', justifyContent: 'center', backgroundColor: '#7a2c34', marginTop: 20, width: '100%' },
+  submitButtonText: { color: '#fff', fontSize: 18, fontWeight: 'bold', textAlign: 'center' },
+  linkText: { marginTop: 15, color: '#fff', textDecorationLine: 'underline' },
 });

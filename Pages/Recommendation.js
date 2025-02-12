@@ -3,7 +3,7 @@ import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 
 export default function Recommendation({ route }) {
-  const { bmi = 0 } = route.params || {};  // Default to 0 if bmi is undefined
+  const { bmi = 0 } = route.params || {};
 
   return (
     <View style={styles.container}>
